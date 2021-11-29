@@ -2,25 +2,21 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace IdentityServer
 {
     public class Program
     {
         private static string AppName = typeof(Program).Namespace;
-        public static int Main(string[] args)
+        public static void Main(string[] args)
         {
-            var configuration = GetConfiguration();
-            Log.Logger = CreateSerilogLogger(configuration);
-            //CreateHostBuilder(args).Build().Run();
-            try
+            /*var configuration = GetConfiguration();
+            Log.Logger = CreateSerilogLogger(configuration);*/
+            CreateHostBuilder(args).Build().Run();
+            /*try
             {
                 Log.Information("Configuring web host", AppName);
                 var host = BuildWebHost(configuration, args);
@@ -37,7 +33,7 @@ namespace IdentityServer
             finally
             {
                 Log.CloseAndFlush();
-            }
+            }*/
         }
 
         private static IWebHost BuildWebHost(IConfiguration configuration, string[] args) =>
@@ -56,8 +52,10 @@ namespace IdentityServer
                 .Enrich.WithProperty("ApplicationContext", AppName)
                 .Enrich.FromLogContext()
                 .WriteTo.Console();
-
-            //cfg.WriteTo.Http(logstahUrl);
+            if (!string.IsNullOrWhiteSpace(logstahUrl))
+            {
+                cfg.WriteTo.Http(logstahUrl);
+            }
             return cfg.CreateLogger();
         }
 
@@ -70,11 +68,11 @@ namespace IdentityServer
             return builder.Build();
         }
 
-        /*public static IHostBuilder CreateHostBuilder(string[] args) =>
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });*/
+                });
     }
 }
