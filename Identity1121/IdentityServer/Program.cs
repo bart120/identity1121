@@ -11,12 +11,12 @@ namespace IdentityServer
     public class Program
     {
         private static string AppName = typeof(Program).Namespace;
-        public static void Main(string[] args)
+        public static int Main(string[] args)
         {
-            /*var configuration = GetConfiguration();
-            Log.Logger = CreateSerilogLogger(configuration);*/
-            CreateHostBuilder(args).Build().Run();
-            /*try
+            var configuration = GetConfiguration();
+            Log.Logger = CreateSerilogLogger(configuration);
+            //CreateHostBuilder(args).Build().Run();
+            try
             {
                 Log.Information("Configuring web host", AppName);
                 var host = BuildWebHost(configuration, args);
@@ -33,7 +33,7 @@ namespace IdentityServer
             finally
             {
                 Log.CloseAndFlush();
-            }*/
+            }
         }
 
         private static IWebHost BuildWebHost(IConfiguration configuration, string[] args) =>
