@@ -1,4 +1,6 @@
 ﻿using IdentityServer.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -23,8 +25,10 @@ namespace IdentityServer.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [AllowAnonymous]
+        public async Task<IActionResult> Privacy()
         {
+            
             return View();
         }
 

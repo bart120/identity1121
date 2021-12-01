@@ -65,9 +65,12 @@ namespace IdentityServer.Controllers
             {
                 await _signInMgr.SignOutAsync();
             }
+
+           // return SignOut();
+            
             if (!string.IsNullOrWhiteSpace(returnUrl))
                 return Redirect(returnUrl);
-            return Redirect("https://localhost:5801/signout-oidc");
+            return Redirect("https://localhost:5021/signout-oidc");
         }
 
         [Route("exter", Name = "exter")]

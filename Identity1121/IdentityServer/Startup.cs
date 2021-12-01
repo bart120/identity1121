@@ -1,5 +1,7 @@
 using IdentityServer.Data;
+using IdentityServer.Services;
 using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServer4.Services;
 using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -75,6 +77,8 @@ namespace IdentityServer
                         sql => sql.MigrationsAssembly(migrationAssembly));
                 });
             builder.AddAspNetIdentity<User>();
+
+            services.AddTransient<IProfileService, ProfilService>();
 
             services.AddRazorPages();
 

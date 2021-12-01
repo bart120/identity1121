@@ -40,7 +40,8 @@ namespace MVCClient
                     options.ClientId = "mvc";
                     options.ClientSecret = "secret_client_console";
                     options.ResponseType = "code";
-                    //options.Scope.Add("oidc profil")
+                    //options.SignedOutRedirectUri = "https://localhost:5021/islogout";
+                    options.Scope.Add("visiteur_user_scope");
                     options.SaveTokens = true;
                 });
                 
