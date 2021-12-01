@@ -1,3 +1,4 @@
+using IdentityServer.Data;
 using IdentityServer4.EntityFramework.DbContexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +30,11 @@ namespace IdentityServer
             var migrationAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
             services.AddControllersWithViews();
 
+            services.AddDbContext<AuthenticationDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
+            });
+
             var builder = services.AddIdentityServer(options =>
             {
                 options.UserInteraction.LoginUrl = "/login";
@@ -38,6 +44,7 @@ namespace IdentityServer
                 options.Events.RaiseFailureEvents = true;
                 options.Events.RaiseSuccessEvents = true;
             });
+            builder.AddDeveloperSigningCredential();
             builder.AddConfigurationStore(s =>
                 {
                     s.DefaultSchema = "configuration";
@@ -50,7 +57,7 @@ namespace IdentityServer
                     s.ConfigureDbContext = db => db.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"),
                         sql => sql.MigrationsAssembly(migrationAssembly));
                 });
-            builder.AddDeveloperSigningCredential();
+            
          
         }
 
