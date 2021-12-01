@@ -105,3 +105,11 @@ D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\bin\
 D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\bin\Debug\netcoreapp3.1\IdentityServer.StaticWebAssets.xml
+D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\obj\Debug\netcoreapp3.1\IdentityServer.MvcApplicationPartsAssemblyInfo.cs
+D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll
+D:\formation\dotnet\identityserver\identity1121\Identity1121\IdentityServer\obj\Debug\netcoreapp3.1\Razor\Views\Authentication\Login.cshtml.g.cs
